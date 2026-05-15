@@ -3,7 +3,8 @@
 
 TraySetIcon("shell32.dll", 261)
 A_IconTip := "shot2cli - screenshot to CLI apps"
-A_TrayMenu.Delete("Help")
+try A_TrayMenu.Delete("Help")
+try A_TrayMenu.Delete("&Help")
 
 ScreenshotDir := EnvGet("USERPROFILE") . "\Pictures\Screenshots"
 
