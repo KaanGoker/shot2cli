@@ -30,6 +30,7 @@ $^v:: {
     drive := StrLower(SubStr(latestFile, 1, 1))
     rest := SubStr(latestFile, 3)
     wslPath := "/mnt/" . drive . StrReplace(rest, "\", "/")
-    SendInput("{Text}" . wslPath)
+    ESC := Chr(27)
+    SendText(ESC . "[200~'" . wslPath . "'" . ESC . "[201~")
 }
 #HotIf
